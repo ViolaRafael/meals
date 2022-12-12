@@ -19,20 +19,33 @@ class MyApp extends StatelessWidget {
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-          headline6: const TextStyle(
-            fontSize: 20,
-            fontFamily: 'RobotoCondensed',
-          ),
-            headline5: const TextStyle(
-              fontFamily: 'Raleway',
-              color: Colors.white
-            )
-        ),
+            headline6: const TextStyle(
+              fontSize: 20,
+              fontFamily: 'RobotoCondensed',
+            ),
+            headline5:
+                const TextStyle(fontFamily: 'Raleway', color: Colors.white)),
       ),
-      routes:   {
-        AppRoutes.HOME : (ctx) => CategoriesScreen(),
-        AppRoutes.CATEGORIESMEALS : (ctx) => CategoriesMealsScreen(),
-        AppRoutes.MEAL_DETAIL : (ctx) => MealDetailScreen(),
+      routes: {
+        AppRoutes.HOME: (ctx) => CategoriesScreen(),
+        AppRoutes.CATEGORIESMEALS: (ctx) => CategoriesMealsScreen(),
+        // AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == '/alguma-coisa') {
+          return null;
+        } else if (settings.name == '/outra-coisa') {
+          return null;
+        } else {
+          return MaterialPageRoute(builder: (_) {
+            return CategoriesScreen();
+          });
+        }
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (_) {
+          return CategoriesScreen();
+        });
       },
     );
   }
