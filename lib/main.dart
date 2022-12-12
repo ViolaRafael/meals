@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
             fontSize: 20,
             fontFamily: 'RobotoCondensed',
           ),
+            headline5: const TextStyle(
+              fontFamily: 'Raleway',
+              color: Colors.white
+            )
         ),
       ),
       routes:   {
