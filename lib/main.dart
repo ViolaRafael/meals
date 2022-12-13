@@ -12,19 +12,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
+        fontFamily: 'Raleway',
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.pink,
           secondary: Colors.amber,
         ),
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
-        fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-            headline6: const TextStyle(
-              fontSize: 20,
-              fontFamily: 'RobotoCondensed',
+              headline6: const TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+              ),
+              headline5:
+                  const TextStyle(fontFamily: 'Raleway', color: Colors.white),
             ),
-            headline5:
-                const TextStyle(fontFamily: 'Raleway', color: Colors.white)),
       ),
       routes: {
         AppRoutes.HOME: (ctx) => TabsScreen(),
